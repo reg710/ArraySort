@@ -47,5 +47,26 @@ describe Sorter do
         expect(result).to eql([100, 100, 100, 100])
     end
     
+    # I did not expect this to work but it does?
+    it "sorts an array of characters" do
+        sorter = Sorter.new
+        result = sorter.arrange(["c", "b", "a"])
+        expect(result).to eql(["a", "b", "c"])
+    end
+
+    # Also, why is this working?
+    it "sorts an array of strings" do
+        sorter = Sorter.new
+        result = sorter.arrange(["cat", "bobsled", "anise"])
+        expect(result).to eql(["anise", "bobsled", "cat"])
+    end
+
+    # JR explained it works because it is looking at the ASCII number
+    # Also learned it sorts all caps then all lowercase, then by letter
+    it "sorts an array of capitals and lowercase characters" do
+        sorter = Sorter.new
+        result = sorter.arrange(["a", "A", "C", "c", "B"])
+        expect(result).to eql(["A", "B", "C", "a", "c"])
+    end
 
 end
