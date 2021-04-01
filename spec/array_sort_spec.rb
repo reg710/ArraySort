@@ -4,6 +4,18 @@ describe Sorter do
     it "knows true is true" do
         expect(true).to eql(true)
     end
+    
+    it "can handle an empty array" do
+        sorter = Sorter.new
+        result = sorter.arrange([])
+        expect(result).to eql([])
+    end
+
+    it "leaves an array of 1 unchanged" do
+        sorter = Sorter.new
+        result = sorter.arrange([2])
+        expect(result).to eql([2])
+    end
 
     it "returns an already sorted array unchanged" do
         sorter = Sorter.new
