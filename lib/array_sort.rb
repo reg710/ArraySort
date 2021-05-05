@@ -20,7 +20,7 @@ class Sorter
                 # If something needed to be swapped, the array is not finished sorting, which is why the looping must be reset to true                
                 if input_array[location] > input_array[location + 1]
                     looping = true
-                    #Need a temp variable otherise you would lose the information before making the second swap
+                    #Used a temp variable so as not to lose the information before making the second swap
                     temp = input_array[location]
                     input_array[location] = input_array[location + 1]
                     input_array[location + 1] = temp
